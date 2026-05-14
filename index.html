@@ -15,7 +15,7 @@
 
     <style>
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-bg: rgba(255, 255, 255, 0.04);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
@@ -34,12 +34,16 @@
 
         body {
             font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
-            background-color: #020617;
-            /* Premium Deep Dark Gradient */
+            /* Changed Background: Premium Animated-like Mesh Dark Theme */
+            background-color: #0f172a;
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.12), transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.12), transparent 30%),
-                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.08), transparent 40%);
+                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(244, 63, 94, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.1) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.7;
@@ -55,13 +59,13 @@
         /* Glassmorphism Common Style */
         .glass-box {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--glass-border);
             border-radius: 24px;
             padding: 40px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -83,10 +87,10 @@
         }
 
         .hero-section h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 700;
             margin-bottom: 15px;
-            background: linear-gradient(to right, #93c5fd, #c4b5fd);
+            background: linear-gradient(to right, #93c5fd, #c4b5fd, #6ee7b7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -121,6 +125,22 @@
             text-align: justify;
         }
 
+        /* Map Container */
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            margin-top: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            /* This filter makes the Google Map dark mode to match the theme */
+            filter: invert(90%) hue-rotate(180deg) contrast(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .map-wrapper:hover {
+            filter: invert(90%) hue-rotate(180deg) contrast(110%);
+        }
+
         /* Info Grid */
         .info-grid {
             display: grid;
@@ -130,7 +150,7 @@
         }
 
         .info-card {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.25);
             border: 1px solid var(--glass-border);
             border-radius: 16px;
             padding: 25px;
@@ -147,7 +167,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent);
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent);
             z-index: -1;
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -155,9 +175,9 @@
 
         .info-card:hover {
             transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .info-card:hover::after {
@@ -212,23 +232,26 @@
             border: 1px solid var(--glass-border);
         }
 
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+
         .social-btn.fb:hover {
             background: rgba(24, 119, 242, 0.2);
             border-color: #1877f2;
-            box-shadow: 0 0 20px rgba(24, 119, 242, 0.4);
+            box-shadow: 0 5px 20px rgba(24, 119, 242, 0.4);
         }
 
-        /* New Group Button Style */
         .social-btn.fb-group:hover {
             background: rgba(14, 165, 233, 0.2);
             border-color: #0ea5e9;
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
         }
 
         .social-btn.yt:hover {
             background: rgba(255, 0, 0, 0.2);
             border-color: #ff0000;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
         }
 
         /* Footer */
@@ -265,7 +288,7 @@
                 </a>
                 <a href="https://www.facebook.com/groups/Amader.Jhawoil" target="_blank" class="social-btn fb-group">
                     <i class="fa-solid fa-users"></i>
-                    ফেসবুক গ্রুপ (আমাদের ঝাঐল)
+                    ফেসবুক গ্রুপ
                 </a>
                 <a href="https://www.youtube.com/@Jhawoil" target="_blank" class="social-btn yt">
                     <i class="fa-brands fa-youtube"></i>
@@ -274,10 +297,31 @@
             </div>
         </header>
 
+        <!-- Google Map Section (NEW) -->
+        <section class="glass-box">
+            <h2 class="section-title"><i class="fa-solid fa-map-location-dot"></i> মানচিত্রে ঝাঐল গ্রাম</h2>
+            <div class="text-block">
+                <p>ঢাকা-রাজশাহী মহাসড়ক এবং বঙ্গবন্ধু সেতু সংযোগ সড়কের নিকটবর্তী হওয়ায় ঝাঐল গ্রামের ভৌগোলিক অবস্থান অত্যন্ত গুরুত্বপূর্ণ। নিচের মানচিত্রে এর সঠিক অবস্থান দেখে নিতে পারেন:</p>
+            </div>
+            
+            <!-- Map Embedded iframe -->
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Jhawoil+Gram,+Sirajganj&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
         <!-- Detailed Text Section 1: Introduction -->
         <section class="glass-box text-block">
             <h2 class="section-title"><i class="fa-solid fa-book-open"></i> পরিচিতি ও পটভূমি</h2>
-            <p><strong>ঝাঐল গ্রাম</strong> বাংলাদেশের উত্তরাঞ্চলের সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার অন্তর্গত একটি সমৃদ্ধ ও ঐতিহ্যবাহী গ্রাম। যমুনার পলিবিধৌত এই অঞ্চলটি তার উর্বর মাটি এবং সহজ-সরল মানুষের জীবনযাত্রার কারণে আলাদা পরিচিতি বহন করে। ঢাকা-রাজশাহী মহাসড়ক এবং বঙ্গবন্ধু সেতু সংযোগ সড়কের খুব কাছে অবস্থিত হওয়ায় এই গ্রামের যাতায়াত ব্যবস্থা অত্যন্ত উন্নত।</p>
+            <p><strong>ঝাঐল গ্রাম</strong> বাংলাদেশের উত্তরাঞ্চলের সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার অন্তর্গত একটি সমৃদ্ধ ও ঐতিহ্যবাহী গ্রাম। যমুনার পলিবিধৌত এই অঞ্চলটি তার উর্বর মাটি এবং সহজ-সরল মানুষের জীবনযাত্রার কারণে আলাদা পরিচিতি বহন করে।</p>
             <p>ডিজিটাল যুগে এই গ্রামের তরুণ সমাজ তাদের শেকড়ের কথা সারা বিশ্বে ছড়িয়ে দেওয়ার জন্য ফেসবুক এবং ইউটিউব চ্যানেল পরিচালনা করে থাকে, যার মাধ্যমে প্রবাসে থাকা গ্রামের মানুষও তাদের মাটির ঘ্রাণ নিতে পারে।</p>
         </section>
 
@@ -292,46 +336,38 @@
             <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> ঐতিহ্য ও জীবনযাত্রা</h2>
             
             <div class="text-block" style="margin-bottom: 25px;">
-                <p>ঝাঐল গ্রামের মানুষের জীবনযাত্রা অত্যন্ত সাদামাটা কিন্তু বৈচিত্র্যময়। এখানে গ্রামীণ সংস্কৃতির শেকড় অনেক গভীরে প্রোথিত। কৃষি, তাঁত ও কুটির শিল্পের পাশাপাশি এখানকার উৎসব, খেলাধুলা এবং সামাজিক মেলবন্ধন এই গ্রামকে একটি আদর্শ গ্রামে পরিণত করেছে। নিচে এই গ্রামের জীবনযাত্রার প্রধান দিকগুলো তুলে ধরা হলো:</p>
+                <p>কৃষি, তাঁত ও কুটির শিল্পের পাশাপাশি এখানকার উৎসব, খেলাধুলা এবং সামাজিক মেলবন্ধন এই গ্রামকে একটি আদর্শ গ্রামে পরিণত করেছে। নিচে এই গ্রামের জীবনযাত্রার প্রধান দিকগুলো তুলে ধরা হলো:</p>
             </div>
 
             <div class="info-grid">
-                <!-- Card 1 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-hand-holding-heart"></i> গোষ্ঠের মেলা</h3>
                     <p>প্রতি বছর বৈশাখ মাসের পূর্ণিমা তিথিতে সনাতন ধর্মাবলম্বীদের উদ্যোগে ঐতিহ্যবাহী 'গোষ্ঠের মেলা' অনুষ্ঠিত হয়। প্রায় ৩৭৫ বছরের পুরোনো এই মেলায় হিন্দু-মুসলিম নির্বিশেষে সব ধর্মের মানুষের মিলনমেলা ঘটে।</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-basket-shopping"></i> শীতল পাটি ও কুটির শিল্প</h3>
                     <p>এই গ্রামটি ঐতিহ্যবাহী শীতল পাটি তৈরির জন্য সমাদৃত। এখানকার শিল্পীদের নিখুঁত হাতের বুননে তৈরি শীতল পাটি এবং বাঁশ-বেতের কাজ গ্রামের নারীদের অর্থনৈতিকভাবে স্বাবলম্বী করেছে।</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-shirt"></i> বিখ্যাত তাঁত শিল্প</h3>
                     <p>সিরাজগঞ্জের তাঁত শিল্পের প্রাণকেন্দ্র হিসেবে এই গ্রামের ঘরে ঘরে হস্তচালিত ও বিদ্যুৎ চালিত তাঁত মেশিনে শাড়ি, লুঙ্গি, গামছা ও তোয়ালে তৈরি হয়, যা দেশের অর্থনীতিতে বড় ভূমিকা রাখে।</p>
                 </div>
-                <!-- Card 4 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-wheat-awn"></i> কৃষি ও অর্থনীতি</h3>
                     <p>অধিকাংশ মানুষের প্রধান পেশা কৃষি। উর্বর মাটিতে ধান, পাট, সরিষা এবং নানা জাতের রবিশস্যের আবাদ হয়। আধুনিক কৃষির ছোঁয়ায় কৃষকরা সারা বছরই সবজি ও ফসলের আবাদ করেন।</p>
                 </div>
-                <!-- Card 5 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-drum"></i> উৎসব ও পার্বণ</h3>
                     <p>শীতকালে পিঠা-পুলি উৎসব, অগ্রহায়ণে নবান্ন, এবং বিভিন্ন গ্রামীণ পালাগানের আয়োজন গ্রামের মানুষকে এক সুতোয় বেঁধে রাখে। বিয়ে বা সামাজিক অনুষ্ঠানে থাকে গ্রামীণ সংস্কৃতির ছোঁয়া।</p>
                 </div>
-                <!-- Card 6 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-volleyball"></i> গ্রামীণ খেলাধুলা</h3>
                     <p>বিকেলে গ্রামের খোলা মাঠে বা স্কুলের মাঠে তরুণদের ক্রিকেট, ফুটবল এবং হা-ডু-ডু খেলার দৃশ্য নিয়মিত চোখে পড়ে। বার্ষিক ক্রীড়া প্রতিযোগিতা গ্রামের এক অন্যতম আকর্ষণ।</p>
                 </div>
-                <!-- Card 7 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-people-arrows"></i> সামাজিক সম্প্রীতি</h3>
                     <p>হিন্দু-মুসলিম সম্প্রীতির এক চমৎকার নিদর্শন এই গ্রাম। যুগ যুগ ধরে উভয় সম্প্রদায়ের মানুষ একে অপরের সুখে-দুঃখে পাশে দাঁড়ায় এবং সব উৎসবে স্বতঃস্ফূর্তভাবে অংশগ্রহণ করে।</p>
                 </div>
-                <!-- Card 8 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-store"></i> হাট-বাজার ও আড্ডা</h3>
                     <p>গ্রামের সাপ্তাহিক হাটগুলো কেবল বেচাকেনার জায়গা নয়, বরং মানুষের সামাজিক যোগাযোগের প্রধান কেন্দ্র। চায়ের দোকানে বসে গ্রামের নানা বিষয় নিয়ে আড্ডা দেওয়া এখানকার মানুষের প্রতিদিনের অভ্যাস।</p>
