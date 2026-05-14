@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঝাঐল গ্রাম | ঐতিহ্য ও জীবনযাত্রা</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;600;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
+            background-color: #020617;
+            /* Premium Deep Dark Gradient */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.12), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.08), transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Glassmorphism Common Style */
+        .glass-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #93c5fd, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Content Formatting */
+        h2.section-title {
+            font-size: 2rem;
+            color: #f8fafc;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h2.section-title i {
+            color: var(--accent-blue);
+        }
+
+        .text-block p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .info-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-card:hover::after {
+            opacity: 1;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-card:nth-child(1) h3 i { color: #f43f5e; }
+        .info-card:nth-child(2) h3 i { color: var(--accent-green); }
+        .info-card:nth-child(3) h3 i { color: #38bdf8; }
+        .info-card:nth-child(4) h3 i { color: var(--accent-orange); }
+        .info-card:nth-child(5) h3 i { color: #a78bfa; }
+        .info-card:nth-child(6) h3 i { color: #fbbf24; }
+        .info-card:nth-child(7) h3 i { color: #f472b6; }
+        .info-card:nth-child(8) h3 i { color: #2dd4bf; }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Social Buttons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+        }
+
+        .social-btn.fb:hover {
+            background: rgba(24, 119, 242, 0.2);
+            border-color: #1877f2;
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.4);
+        }
+
+        /* New Group Button Style */
+        .social-btn.fb-group:hover {
+            background: rgba(14, 165, 233, 0.2);
+            border-color: #0ea5e9;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+        }
+
+        .social-btn.yt:hover {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .glass-box { padding: 25px; }
+            h2.section-title { font-size: 1.6rem; }
+            .social-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="glass-box hero-section">
+            <h1>ঝাঐল গ্রাম</h1>
+            <p>সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার এক অপরূপ প্রাকৃতিক সৌন্দর্য, সম্প্রীতি ও ঐতিহ্যে ঘেরা আদর্শ জনপদ।</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/JhawoilGram/" target="_blank" class="social-btn fb">
+                    <i class="fa-brands fa-facebook"></i>
+                    ফেসবুক পেজ
+                </a>
+                <a href="https://www.facebook.com/groups/Amader.Jhawoil" target="_blank" class="social-btn fb-group">
+                    <i class="fa-solid fa-users"></i>
+                    ফেসবুক গ্রুপ (আমাদের ঝাঐল)
+                </a>
+                <a href="https://www.youtube.com/@Jhawoil" target="_blank" class="social-btn yt">
+                    <i class="fa-brands fa-youtube"></i>
+                    ইউটিউব চ্যানেল
+                </a>
+            </div>
+        </header>
+
+        <!-- Detailed Text Section 1: Introduction -->
+        <section class="glass-box text-block">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> পরিচিতি ও পটভূমি</h2>
+            <p><strong>ঝাঐল গ্রাম</strong> বাংলাদেশের উত্তরাঞ্চলের সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার অন্তর্গত একটি সমৃদ্ধ ও ঐতিহ্যবাহী গ্রাম। যমুনার পলিবিধৌত এই অঞ্চলটি তার উর্বর মাটি এবং সহজ-সরল মানুষের জীবনযাত্রার কারণে আলাদা পরিচিতি বহন করে। ঢাকা-রাজশাহী মহাসড়ক এবং বঙ্গবন্ধু সেতু সংযোগ সড়কের খুব কাছে অবস্থিত হওয়ায় এই গ্রামের যাতায়াত ব্যবস্থা অত্যন্ত উন্নত।</p>
+            <p>ডিজিটাল যুগে এই গ্রামের তরুণ সমাজ তাদের শেকড়ের কথা সারা বিশ্বে ছড়িয়ে দেওয়ার জন্য ফেসবুক এবং ইউটিউব চ্যানেল পরিচালনা করে থাকে, যার মাধ্যমে প্রবাসে থাকা গ্রামের মানুষও তাদের মাটির ঘ্রাণ নিতে পারে।</p>
+        </section>
+
+        <!-- Detailed Text Section 2: History & Pride -->
+        <section class="glass-box text-block">
+            <h2 class="section-title"><i class="fa-solid fa-monument"></i> ইতিহাস ও গৌরব</h2>
+            <p>ঝাঐল গ্রামের রয়েছে এক সমৃদ্ধ অতীত। এই গ্রামের সবচেয়ে বড় অহংকার হলো, এটি <strong>উপমহাদেশের বিখ্যাত গণিতবিদ যাদব চন্দ্র চক্রবর্তীর জন্মস্থান</strong>। ব্রিটিশ আমলে তাঁর রচিত গণিতের বই সমগ্র ভারত উপমহাদেশের বিদ্যালয়গুলোতে পাঠ্যপুস্তক হিসেবে পড়ানো হতো। তাঁকে "পাটিগণিতের সম্রাট" বলা হয়। তাঁর স্মৃতি এই গ্রামের মানুষকে আজও গর্বিত করে।</p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="glass-box">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> ঐতিহ্য ও জীবনযাত্রা</h2>
+            
+            <div class="text-block" style="margin-bottom: 25px;">
+                <p>ঝাঐল গ্রামের মানুষের জীবনযাত্রা অত্যন্ত সাদামাটা কিন্তু বৈচিত্র্যময়। এখানে গ্রামীণ সংস্কৃতির শেকড় অনেক গভীরে প্রোথিত। কৃষি, তাঁত ও কুটির শিল্পের পাশাপাশি এখানকার উৎসব, খেলাধুলা এবং সামাজিক মেলবন্ধন এই গ্রামকে একটি আদর্শ গ্রামে পরিণত করেছে। নিচে এই গ্রামের জীবনযাত্রার প্রধান দিকগুলো তুলে ধরা হলো:</p>
+            </div>
+
+            <div class="info-grid">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-hand-holding-heart"></i> গোষ্ঠের মেলা</h3>
+                    <p>প্রতি বছর বৈশাখ মাসের পূর্ণিমা তিথিতে সনাতন ধর্মাবলম্বীদের উদ্যোগে ঐতিহ্যবাহী 'গোষ্ঠের মেলা' অনুষ্ঠিত হয়। প্রায় ৩৭৫ বছরের পুরোনো এই মেলায় হিন্দু-মুসলিম নির্বিশেষে সব ধর্মের মানুষের মিলনমেলা ঘটে।</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-basket-shopping"></i> শীতল পাটি ও কুটির শিল্প</h3>
+                    <p>এই গ্রামটি ঐতিহ্যবাহী শীতল পাটি তৈরির জন্য সমাদৃত। এখানকার শিল্পীদের নিখুঁত হাতের বুননে তৈরি শীতল পাটি এবং বাঁশ-বেতের কাজ গ্রামের নারীদের অর্থনৈতিকভাবে স্বাবলম্বী করেছে।</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-shirt"></i> বিখ্যাত তাঁত শিল্প</h3>
+                    <p>সিরাজগঞ্জের তাঁত শিল্পের প্রাণকেন্দ্র হিসেবে এই গ্রামের ঘরে ঘরে হস্তচালিত ও বিদ্যুৎ চালিত তাঁত মেশিনে শাড়ি, লুঙ্গি, গামছা ও তোয়ালে তৈরি হয়, যা দেশের অর্থনীতিতে বড় ভূমিকা রাখে।</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-wheat-awn"></i> কৃষি ও অর্থনীতি</h3>
+                    <p>অধিকাংশ মানুষের প্রধান পেশা কৃষি। উর্বর মাটিতে ধান, পাট, সরিষা এবং নানা জাতের রবিশস্যের আবাদ হয়। আধুনিক কৃষির ছোঁয়ায় কৃষকরা সারা বছরই সবজি ও ফসলের আবাদ করেন।</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-drum"></i> উৎসব ও পার্বণ</h3>
+                    <p>শীতকালে পিঠা-পুলি উৎসব, অগ্রহায়ণে নবান্ন, এবং বিভিন্ন গ্রামীণ পালাগানের আয়োজন গ্রামের মানুষকে এক সুতোয় বেঁধে রাখে। বিয়ে বা সামাজিক অনুষ্ঠানে থাকে গ্রামীণ সংস্কৃতির ছোঁয়া।</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-volleyball"></i> গ্রামীণ খেলাধুলা</h3>
+                    <p>বিকেলে গ্রামের খোলা মাঠে বা স্কুলের মাঠে তরুণদের ক্রিকেট, ফুটবল এবং হা-ডু-ডু খেলার দৃশ্য নিয়মিত চোখে পড়ে। বার্ষিক ক্রীড়া প্রতিযোগিতা গ্রামের এক অন্যতম আকর্ষণ।</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-people-arrows"></i> সামাজিক সম্প্রীতি</h3>
+                    <p>হিন্দু-মুসলিম সম্প্রীতির এক চমৎকার নিদর্শন এই গ্রাম। যুগ যুগ ধরে উভয় সম্প্রদায়ের মানুষ একে অপরের সুখে-দুঃখে পাশে দাঁড়ায় এবং সব উৎসবে স্বতঃস্ফূর্তভাবে অংশগ্রহণ করে।</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-store"></i> হাট-বাজার ও আড্ডা</h3>
+                    <p>গ্রামের সাপ্তাহিক হাটগুলো কেবল বেচাকেনার জায়গা নয়, বরং মানুষের সামাজিক যোগাযোগের প্রধান কেন্দ্র। চায়ের দোকানে বসে গ্রামের নানা বিষয় নিয়ে আড্ডা দেওয়া এখানকার মানুষের প্রতিদিনের অভ্যাস।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; ২০২৬ ঝাঐল গ্রাম পরিচিতি। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p>Designed with Advanced Glassmorphism & Dark UI</p>
+        </footer>
+    </div>
+
+</body>
+</html>
