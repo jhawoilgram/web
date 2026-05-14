@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ঝাঐল গ্রাম | Jhawoil Village</title>
     
+    <!-- ================= SEO Meta Tags ================= -->
+    <title>ঝাঐল গ্রাম | Jhawoil Village - Sirajganj</title>
+    <meta name="description" content="সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার বিখ্যাত শীতল পাটি প্রস্তুতকারক ঝাঐল গ্রাম। Jhawoil Village - A traditional village in Sirajganj known for its culture, Jhawoil flyover, and Shital Pati.">
+    <meta name="keywords" content="ঝাঐল গ্রাম, Jhawoil Village, Jhawoil Gram, Kamarkhanda, Sirajganj, Jhawoil Flyover, শীতল পাটি, যাদব চন্দ্র চক্রবর্তী, Jhawoil UP">
+    <meta name="author" content="Jhawoil Village Community">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook/Social Media Share) -->
+    <meta property="og:title" content="ঝাঐল গ্রাম | Jhawoil Village">
+    <meta property="og:description" content="শিক্ষা, সংস্কৃতি, ধর্মীয় অনুষ্ঠান ও খেলাধুলায় সমৃদ্ধ সিরাজগঞ্জের কামারখন্দ উপজেলার এক ঐতিহ্যবাহী গ্রাম।">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.facebook.com/JhawoilGram/">
+    <!-- ================================================= -->
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +25,6 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- html2pdf.js library for PDF downloading -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
         :root {
@@ -23,17 +33,11 @@
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
             --accent-green: #10b981;
             --accent-orange: #f59e0b;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
@@ -44,341 +48,296 @@
                 radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
                 radial-gradient(at 80% 50%, rgba(244, 63, 94, 0.1) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
-                radial-gradient(at 80% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.1) 0px, transparent 50%);
+                radial-gradient(at 80% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.7;
         }
 
-        /* Floating Action Buttons (Lang & PDF) */
-        .fab-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-        }
+        /* Floating Action Buttons */
+        .fab-container { position: fixed; top: 20px; right: 20px; z-index: 1000; }
 
         .action-btn {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); color: #fff; padding: 10px 20px;
+            border-radius: 30px; cursor: pointer; font-family: 'Poppins', sans-serif;
+            font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 8px;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-
-        .action-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .pdf-btn:hover {
-            background: rgba(239, 68, 68, 0.2);
-            border-color: #ef4444;
-        }
+        .action-btn:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
 
         /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
+        .container { max-width: 1200px; margin: 40px auto 0; padding: 40px 20px; }
 
         /* Language Classes */
         .lang-en { display: none; font-family: 'Poppins', sans-serif; }
         .lang-bn { display: block; font-family: 'Noto Sans Bengali', sans-serif; }
 
-        /* Glassmorphism Common Style */
+        /* Glassmorphism Styles */
         .glass-box {
-            background: var(--glass-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
+            background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px;
+            margin-bottom: 30px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); position: relative; overflow: hidden;
         }
-
         .glass-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 1px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
         }
 
-        /* Hero Section */
-        .hero-section { text-align: center; padding: 60px 20px; }
-        .hero-section h1 {
-            font-size: 3.8rem; font-weight: 700; margin-bottom: 15px;
-            background: linear-gradient(to right, #93c5fd, #c4b5fd, #6ee7b7);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        /* Highlight Text Style */
+        .highlight-text {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+            display: inline-block;
         }
-        .hero-section p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 30px; }
 
-        /* Content Formatting */
-        h2.section-title {
-            font-size: 2rem; color: #f8fafc; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 15px;
-            padding-bottom: 10px; border-bottom: 1px solid var(--glass-border);
-        }
+        /* Typography & Layout */
+        .hero-section { text-align: center; padding: 60px 20px; }
+        .hero-section h1 { font-size: 3.8rem; font-weight: 700; margin-bottom: 15px; }
+        .hero-section p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 30px; }
+        
+        h2.section-title { font-size: 2rem; color: #f8fafc; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--glass-border); }
         h2.section-title i { color: var(--accent-blue); }
         .text-block p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 20px; text-align: justify; }
 
-        /* Map Container */
+        /* BIG TEXT CSS FOR INTRODUCTION SECTION */
+        .intro-text-block p {
+            font-size: 1.25rem !important;
+            line-height: 1.85 !important;
+            color: #f8fafc !important;
+            letter-spacing: 0.3px;
+        }
+
+        /* Best Place Highlight Box */
+        .best-place-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .best-place-box:hover { transform: translateY(-5px); border-color: rgba(16, 185, 129, 0.5); }
+        .best-place-box h3 { color: #6ee7b7; font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .best-place-box .badge { position: absolute; top: -15px; right: 20px; background: #10b981; color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4); }
+
+        /* Map */
         .map-wrapper {
-            border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border);
-            margin-top: 25px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            filter: invert(90%) hue-rotate(180deg) contrast(100%);
+            border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border); margin-top: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); filter: invert(90%) hue-rotate(180deg) contrast(100%);
             transition: filter 0.3s ease;
         }
         .map-wrapper:hover { filter: invert(90%) hue-rotate(180deg) contrast(110%); }
 
         /* Info Grid */
-        .info-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px; margin-top: 30px;
-        }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 30px; }
         .info-card {
-            background: rgba(0, 0, 0, 0.25); border: 1px solid var(--glass-border);
-            border-radius: 16px; padding: 25px; transition: all 0.4s ease;
-            position: relative; overflow: hidden; z-index: 1;
+            background: rgba(0, 0, 0, 0.25); border: 1px solid var(--glass-border); border-radius: 16px;
+            padding: 25px; transition: all 0.4s ease; position: relative; overflow: hidden; z-index: 1;
         }
-        .info-card::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent);
-            z-index: -1; opacity: 0; transition: opacity 0.4s ease;
-        }
-        .info-card:hover {
-            transform: translateY(-8px); background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-        }
+        .info-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent); z-index: -1; opacity: 0; transition: opacity 0.4s ease; }
+        .info-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); }
         .info-card:hover::after { opacity: 1; }
         .info-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #e2e8f0; display: flex; align-items: center; gap: 12px; }
-
-        /* Dynamic Colors for 9 Icons */
-        .info-card:nth-child(1) h3 i { color: #f43f5e; } /* Rose */
-        .info-card:nth-child(2) h3 i { color: var(--accent-green); } /* Green */
-        .info-card:nth-child(3) h3 i { color: #38bdf8; } /* Light Blue */
-        .info-card:nth-child(4) h3 i { color: var(--accent-orange); } /* Orange */
-        .info-card:nth-child(5) h3 i { color: #a78bfa; } /* Purple */
-        .info-card:nth-child(6) h3 i { color: #fbbf24; } /* Amber */
-        .info-card:nth-child(7) h3 i { color: #f472b6; } /* Pink */
-        .info-card:nth-child(8) h3 i { color: #2dd4bf; } /* Teal */
-        .info-card:nth-child(9) h3 i { color: #818cf8; } /* Indigo - Flyover */
-        
         .info-card p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+
+        /* Dynamic Icons */
+        .info-card:nth-child(1) h3 i { color: #f43f5e; }
+        .info-card:nth-child(2) h3 i { color: var(--accent-green); }
+        .info-card:nth-child(3) h3 i { color: #38bdf8; }
+        .info-card:nth-child(4) h3 i { color: var(--accent-orange); }
+        .info-card:nth-child(5) h3 i { color: #a78bfa; }
+        .info-card:nth-child(6) h3 i { color: #fbbf24; }
+        .info-card:nth-child(7) h3 i { color: #f472b6; }
+        .info-card:nth-child(8) h3 i { color: #2dd4bf; }
+        .info-card:nth-child(9) h3 i { color: #818cf8; }
 
         /* Social Buttons */
         .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .social-btn {
-            display: flex; align-items: center; gap: 10px; padding: 12px 25px;
-            border-radius: 50px; text-decoration: none; color: var(--text-primary);
-            font-weight: 600; font-size: 1rem; transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border);
-        }
+        .social-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 1rem; transition: all 0.3s ease; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); }
         .social-btn:hover { transform: translateY(-3px); }
-        .social-btn.fb:hover { background: rgba(24, 119, 242, 0.2); border-color: #1877f2; box-shadow: 0 5px 20px rgba(24, 119, 242, 0.4); }
-        .social-btn.fb-group:hover { background: rgba(14, 165, 233, 0.2); border-color: #0ea5e9; box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4); }
-        .social-btn.yt:hover { background: rgba(255, 0, 0, 0.2); border-color: #ff0000; box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4); }
+        .social-btn.fb:hover { background: rgba(24, 119, 242, 0.2); border-color: #1877f2; }
+        .social-btn.fb-group:hover { background: rgba(14, 165, 233, 0.2); border-color: #0ea5e9; }
+        .social-btn.yt:hover { background: rgba(255, 0, 0, 0.2); border-color: #ff0000; }
 
+        /* Footer & Hit Counter */
         footer { text-align: center; padding: 30px; color: var(--text-secondary); margin-top: 40px; border-top: 1px solid var(--glass-border); }
-
-        /* Hide specific elements during PDF generation */
-        .pdf-generating .fab-container,
-        .pdf-generating iframe {
-            display: none !important;
+        
+        .hit-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #6ee7b7;
         }
-
-        /* PDF specific styling to prevent text cutoff */
-        .pdf-generating .glass-box {
-            page-break-inside: avoid;
-            background: #0f172a; /* Solid color for better PDF rendering */
-            box-shadow: none;
-            border: 1px solid #334155;
-        }
+        .hit-counter b { font-family: 'Poppins', sans-serif; letter-spacing: 2px; }
 
         @media (max-width: 768px) {
             .hero-section h1 { font-size: 2.5rem; }
             .glass-box { padding: 25px; }
             .social-btn { width: 100%; justify-content: center; }
-            .fab-container { top: 10px; right: 10px; flex-direction: column; }
+            .fab-container { top: 10px; right: 10px; }
+            .intro-text-block p { font-size: 1.15rem !important; }
+            .best-place-box { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Action Buttons Container -->
+    <!-- Language Switcher -->
     <div class="fab-container">
-        <!-- PDF Download Button -->
-        <button class="action-btn pdf-btn" id="downloadPdfBtn" onclick="generatePDF()">
-            <i class="fa-solid fa-file-pdf"></i> PDF
-        </button>
-        <!-- Language Switcher -->
         <button class="action-btn" id="langToggleBtn" onclick="toggleLanguage()">
             <i class="fa-solid fa-language"></i> EN
         </button>
     </div>
 
-    <!-- The main content wrapped in an ID for PDF targeting -->
-    <div id="content-to-download">
-        <div class="container">
-            <!-- Hero Section -->
-            <header class="glass-box hero-section">
-                <h1 class="lang-bn">ঝাঐল গ্রাম</h1>
-                <h1 class="lang-en">Jhawoil Village</h1>
-                
-                <p class="lang-bn">সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার এক অপরূপ প্রাকৃতিক সৌন্দর্য, সম্প্রীতি ও ঐতিহ্যে ঘেরা আদর্শ জনপদ।</p>
-                <p class="lang-en">An ideal village surrounded by breathtaking natural beauty, harmony, and tradition in Kamarkhanda Upazila, Sirajganj District.</p>
-                
-                <div class="social-links">
-                    <a href="https://www.facebook.com/JhawoilGram/" target="_blank" class="social-btn fb">
-                        <i class="fa-brands fa-facebook"></i>
-                        <span class="lang-bn">ফেসবুক পেজ</span><span class="lang-en">Facebook Page</span>
-                    </a>
-                    <a href="https://www.facebook.com/groups/Amader.Jhawoil" target="_blank" class="social-btn fb-group">
-                        <i class="fa-solid fa-users"></i>
-                        <span class="lang-bn">ফেসবুক গ্রুপ</span><span class="lang-en">Facebook Group</span>
-                    </a>
-                    <a href="https://www.youtube.com/@Jhawoil" target="_blank" class="social-btn yt">
-                        <i class="fa-brands fa-youtube"></i>
-                        <span class="lang-bn">ইউটিউব চ্যানেল</span><span class="lang-en">YouTube Channel</span>
-                    </a>
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <header class="glass-box hero-section">
+            <h1 class="lang-bn"><span class="highlight-text">ঝাঐল গ্রাম</span></h1>
+            <h1 class="lang-en"><span class="highlight-text">Jhawoil Village</span></h1>
+            
+            <p class="lang-bn">সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার এক অপরূপ প্রাকৃতিক সৌন্দর্য, সম্প্রীতি ও ঐতিহ্যে ঘেরা আদর্শ জনপদ।</p>
+            <p class="lang-en">An ideal village surrounded by breathtaking natural beauty, harmony, and tradition in Kamarkhanda Upazila, Sirajganj District.</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/JhawoilGram/" target="_blank" class="social-btn fb"><i class="fa-brands fa-facebook"></i> <span class="lang-bn">ফেসবুক পেজ</span><span class="lang-en">Facebook Page</span></a>
+                <a href="https://www.facebook.com/groups/Amader.Jhawoil" target="_blank" class="social-btn fb-group"><i class="fa-solid fa-users"></i> <span class="lang-bn">ফেসবুক গ্রুপ</span><span class="lang-en">Facebook Group</span></a>
+                <a href="https://www.youtube.com/@Jhawoil" target="_blank" class="social-btn yt"><i class="fa-brands fa-youtube"></i> <span class="lang-bn">ইউটিউব চ্যানেল</span><span class="lang-en">YouTube</span></a>
+            </div>
+        </header>
+
+        <!-- Best Place Section (NEW FEATURE) -->
+        <section class="glass-box text-block">
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> <span class="lang-bn">সেরা দর্শনীয় স্থান</span><span class="lang-en">Best Places to Visit</span></h2>
+            
+            <div class="best-place-box">
+                <div class="badge"><i class="fa-solid fa-fire"></i> <span class="lang-bn">জনপ্রিয়</span><span class="lang-en">Popular</span></div>
+                <h3>
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <span class="lang-bn">ঝাঐল ওভারব্রিজ ও বিশ্বরোড এলাকা</span>
+                    <span class="lang-en">Jhawoil Flyover & Bishwa Road Area</span>
+                </h3>
+                <p class="lang-bn"><span class="highlight-text">ঝাঐল গ্রাম</span>-এর সবচেয়ে আকর্ষণীয় এবং ব্যস্ততম স্থান হলো <strong>ঝাঐল ওভারব্রিজ</strong> সংলগ্ন এলাকা। ঢাকা-রাজশাহী বিশ্বরোডের এই অংশে দাঁড়িয়ে গ্রামের সবুজ প্রান্তর এবং দূরগামী যানবাহনের দৃশ্য উপভোগ করা যায়। বিকেলের আড্ডা, মুক্ত বাতাস এবং সূর্যাস্ত দেখার জন্য এটি গ্রামের মানুষের সবচেয়ে প্রিয় স্থান।</p>
+                <p class="lang-en">The most attractive and busiest place in <span class="highlight-text">Jhawoil Village</span> is the area adjacent to the <strong>Jhawoil Flyover</strong>. Standing on this part of the Dhaka-Rajshahi highway, one can enjoy the beautiful view of the green fields and passing vehicles. It is the most favorite place for locals for afternoon gatherings, fresh air, and watching the sunset.</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="glass-box text-block intro-text-block">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> <span class="lang-bn">পরিচিতি ও পটভূমি</span><span class="lang-en">Introduction & Background</span></h2>
+            
+            <p class="lang-bn"><span class="highlight-text">ঝাঐল গ্রাম</span> বাংলাদেশের উত্তরাঞ্চলের সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার অন্তর্গত একটি সমৃদ্ধ ও ঐতিহ্যবাহী গ্রাম। যমুনার পলিবিধৌত এই অঞ্চলটি তার উর্বর মাটি এবং সহজ-সরল মানুষের জীবনযাত্রার কারণে আলাদা পরিচিতি বহন করে।</p>
+            <p class="lang-en"><span class="highlight-text">Jhawoil Village</span> is a prosperous and traditional village situated in Kamarkhanda Upazila of Sirajganj district in the northern region of Bangladesh. This alluvial region of the Jamuna river bears a distinct identity due to its fertile soil and the simple lifestyle of its people.</p>
+            
+            <p class="lang-bn">সিরাজগঞ্জ জেলার কামারখন্দ উপজেলাধীন বিখ্যাত শীতল পাটি প্রস্তুতকারক <span class="highlight-text">ঝাঐল গ্রাম</span>। বিশ্ব রোড সংলগ্ন ঝাঐল ওভার ব্রীজের উত্তর পারে ঝাঐল ইউপি কার্য্যালয় অবস্থিত। কাল পরিক্রমায় আজ ঝাঐল ইউনিয়ন শিক্ষা, সংস্কৃতি, ধর্মীয় অনুষ্ঠান, খেলাধুলা সহ বিভিন্ন ক্ষেত্রে তার নিজস্ব স্বকীয়তা আজও সমুজ্জ্বল।</p>
+            <p class="lang-en">Jhawoil is a famous Shital Pati manufacturing village under Kamarkhanda upazila of Sirajganj district. The Jhawoil UP office is located on the northern side of the Jhawoil overbridge adjacent to the Bishwa Road. Over the course of time, Jhawoil Union still shines brightly in its uniqueness in various fields including education, culture, religious ceremonies, and sports.</p>
+            
+            <p class="lang-bn">ডিজিটাল যুগে এই গ্রামের তরুণ সমাজ তাদের শেকড়ের কথা সারা বিশ্বে ছড়িয়ে দেওয়ার জন্য ফেসবুক এবং ইউটিউব চ্যানেল পরিচালনা করে থাকে, যার মাধ্যমে প্রবাসে থাকা গ্রামের মানুষও তাদের মাটির ঘ্রাণ নিতে পারে।</p>
+            <p class="lang-en">In the digital age, the youth of this village run Facebook and YouTube channels to spread their roots across the world, allowing the village people living abroad to feel the essence of their soil.</p>
+        </section>
+
+        <!-- Google Map Section -->
+        <section class="glass-box map-section">
+            <h2 class="section-title"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-bn">মানচিত্রে ঝাঐল গ্রাম</span><span class="lang-en">Jhawoil on Map</span></h2>
+            <div class="text-block">
+                <p class="lang-bn">ঢাকা-রাজশাহী মহাসড়ক এবং বঙ্গবন্ধু সেতু সংযোগ সড়কের নিকটবর্তী হওয়ায় <span class="highlight-text">ঝাঐল গ্রাম</span>-এর ভৌগোলিক অবস্থান অত্যন্ত গুরুত্বপূর্ণ।</p>
+                <p class="lang-en">Located near the Dhaka-Rajshahi highway and Bangabandhu Bridge connecting road, the geographical location of <span class="highlight-text">Jhawoil Village</span> is highly significant.</p>
+            </div>
+            <div class="map-wrapper">
+                <iframe src="https://maps.google.com/maps?q=Jhawoil+Gram,+Sirajganj&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="glass-box text-block">
+            <h2 class="section-title"><i class="fa-solid fa-monument"></i> <span class="lang-bn">ইতিহাস ও গৌরব</span><span class="lang-en">History & Pride</span></h2>
+            <p class="lang-bn"><span class="highlight-text">ঝাঐল গ্রাম</span>-এর সবচেয়ে বড় অহংকার হলো, এটি <strong>উপমহাদেশের বিখ্যাত গণিতবিদ যাদব চন্দ্র চক্রবর্তীর জন্মস্থান</strong>। ব্রিটিশ আমলে তাঁর রচিত গণিতের বই সমগ্র ভারত উপমহাদেশের বিদ্যালয়গুলোতে পাঠ্যপুস্তক হিসেবে পড়ানো হতো। তাঁকে "পাটিগণিতের সম্রাট" বলা হয়।</p>
+            <p class="lang-en">The biggest pride of <span class="highlight-text">Jhawoil Village</span> is that it is the birthplace of the famous mathematician of the subcontinent, <strong>Jadab Chandra Chakravarti</strong>. He is known as the "Emperor of Arithmetic".</p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="glass-box">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span class="lang-bn">ঐতিহ্য ও জীবনযাত্রা</span><span class="lang-en">Tradition & Lifestyle</span></h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-hand-holding-heart"></i> <span class="lang-bn">গোষ্ঠের মেলা</span><span class="lang-en">Goshther Mela</span></h3>
+                    <p class="lang-bn">প্রতি বছর বৈশাখ মাসের পূর্ণিমা তিথিতে সনাতন ধর্মাবলম্বীদের উদ্যোগে ঐতিহ্যবাহী 'গোষ্ঠের মেলা' অনুষ্ঠিত হয়। প্রায় ৩৭৫ বছরের পুরোনো এই মেলায় সবার মিলনমেলা ঘটে।</p>
+                    <p class="lang-en">Every year on the full moon of Baishakh, the 375-year-old traditional 'Goshther Mela' is held in full harmony.</p>
                 </div>
-            </header>
-
-            <!-- Google Map Section -->
-            <section class="glass-box">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-map-location-dot"></i> 
-                    <span class="lang-bn">মানচিত্রে ঝাঐল গ্রাম</span>
-                    <span class="lang-en">Jhawoil Village on Map</span>
-                </h2>
-                <div class="text-block">
-                    <p class="lang-bn">ঢাকা-রাজশাহী মহাসড়ক এবং বঙ্গবন্ধু সেতু সংযোগ সড়কের নিকটবর্তী হওয়ায় ঝাঐল গ্রামের ভৌগোলিক অবস্থান অত্যন্ত গুরুত্বপূর্ণ। নিচের মানচিত্রে এর সঠিক অবস্থান দেখে নিতে পারেন:</p>
-                    <p class="lang-en">Located near the Dhaka-Rajshahi highway and Bangabandhu Bridge connecting road, the geographical location of Jhawoil village is highly significant. You can see its exact location on the map below:</p>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-basket-shopping"></i> <span class="lang-bn">শীতল পাটি ও কুটির শিল্প</span><span class="lang-en">Cottage Industry</span></h3>
+                    <p class="lang-bn">এই গ্রামটি ঐতিহ্যবাহী শীতল পাটি তৈরির জন্য সমাদৃত। এখানকার নিখুঁত হাতের বুনন গ্রামের নারীদের অর্থনৈতিকভাবে স্বাবলম্বী করেছে।</p>
+                    <p class="lang-en">The village is appreciated for making traditional Shital Pati (Cool Mats) which makes women economically self-reliant.</p>
                 </div>
-                
-                <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=Jhawoil+Gram,+Sirajganj&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-shirt"></i> <span class="lang-bn">বিখ্যাত তাঁত শিল্প</span><span class="lang-en">Handloom Industry</span></h3>
+                    <p class="lang-bn">সিরাজগঞ্জের তাঁত শিল্পের প্রাণকেন্দ্র হিসেবে এই গ্রামের ঘরে ঘরে শাড়ি, লুঙ্গি, গামছা ও তোয়ালে তৈরি হয়, যা অর্থনীতিতে বড় ভূমিকা রাখে।</p>
+                    <p class="lang-en">As a hub of Sirajganj's handloom industry, sarees, lungis, and towels are produced in almost every house.</p>
                 </div>
-            </section>
-
-            <!-- Introduction Section -->
-            <section class="glass-box text-block">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-book-open"></i> 
-                    <span class="lang-bn">পরিচিতি ও পটভূমি</span>
-                    <span class="lang-en">Introduction & Background</span>
-                </h2>
-                <p class="lang-bn"><strong>ঝাঐল গ্রাম</strong> বাংলাদেশের উত্তরাঞ্চলের সিরাজগঞ্জ জেলার কামারখন্দ উপজেলার অন্তর্গত একটি সমৃদ্ধ ও ঐতিহ্যবাহী গ্রাম। যমুনার পলিবিধৌত এই অঞ্চলটি তার উর্বর মাটি এবং সহজ-সরল মানুষের জীবনযাত্রার কারণে আলাদা পরিচিতি বহন করে।</p>
-                <p class="lang-en"><strong>Jhawoil Village</strong> is a prosperous and traditional village situated in Kamarkhanda Upazila of Sirajganj district in the northern region of Bangladesh. This alluvial region of the Jamuna river bears a distinct identity due to its fertile soil and the simple lifestyle of its people.</p>
-                
-                <p class="lang-bn">ডিজিটাল যুগে এই গ্রামের তরুণ সমাজ তাদের শেকড়ের কথা সারা বিশ্বে ছড়িয়ে দেওয়ার জন্য ফেসবুক এবং ইউটিউব চ্যানেল পরিচালনা করে থাকে, যার মাধ্যমে প্রবাসে থাকা গ্রামের মানুষও তাদের মাটির ঘ্রাণ নিতে পারে।</p>
-                <p class="lang-en">In the digital age, the youth of this village run Facebook and YouTube channels to spread their roots across the world, allowing the village people living abroad to feel the essence of their soil.</p>
-            </section>
-
-            <!-- History & Pride -->
-            <section class="glass-box text-block">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-monument"></i> 
-                    <span class="lang-bn">ইতিহাস ও গৌরব</span>
-                    <span class="lang-en">History & Pride</span>
-                </h2>
-                <p class="lang-bn">ঝাঐল গ্রামের রয়েছে এক সমৃদ্ধ অতীত। এই গ্রামের সবচেয়ে বড় অহংকার হলো, এটি <strong>উপমহাদেশের বিখ্যাত গণিতবিদ যাদব চন্দ্র চক্রবর্তীর জন্মস্থান</strong>। ব্রিটিশ আমলে তাঁর রচিত গণিতের বই সমগ্র ভারত উপমহাদেশের বিদ্যালয়গুলোতে পাঠ্যপুস্তক হিসেবে পড়ানো হতো। তাঁকে "পাটিগণিতের সম্রাট" বলা হয়। তাঁর স্মৃতি এই গ্রামের মানুষকে আজও গর্বিত করে।</p>
-                <p class="lang-en">Jhawoil village has a rich past. The biggest pride of this village is that it is the birthplace of the famous mathematician of the subcontinent, <strong>Jadab Chandra Chakravarti</strong>. During the British era, the mathematics book written by him was taught as a textbook in schools across the Indian subcontinent. He is called the "Emperor of Arithmetic".</p>
-            </section>
-
-            <!-- Features Grid -->
-            <section class="glass-box">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-layer-group"></i> 
-                    <span class="lang-bn">ঐতিহ্য ও জীবনযাত্রা</span>
-                    <span class="lang-en">Tradition & Lifestyle</span>
-                </h2>
-                
-                <div class="text-block" style="margin-bottom: 25px;">
-                    <p class="lang-bn">কৃষি, তাঁত ও কুটির শিল্পের পাশাপাশি এখানকার উৎসব, খেলাধুলা এবং সামাজিক মেলবন্ধন এই গ্রামকে একটি আদর্শ গ্রামে পরিণত করেছে। নিচে এই গ্রামের জীবনযাত্রার প্রধান দিকগুলো তুলে ধরা হলো:</p>
-                    <p class="lang-en">Along with agriculture, handloom, and cottage industries, the festivals, sports, and social bonds make this an ideal village. Below are the main aspects of the lifestyle here:</p>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-wheat-awn"></i> <span class="lang-bn">কৃষি ও অর্থনীতি</span><span class="lang-en">Agriculture</span></h3>
+                    <p class="lang-bn">অধিকাংশ মানুষের প্রধান পেশা কৃষি। উর্বর মাটিতে ধান, পাট, সরিষা এবং নানা জাতের রবিশস্য ও সবজির আবাদ হয়।</p>
+                    <p class="lang-en">Agriculture is the main occupation. Paddy, jute, mustard, and various winter crops are cultivated.</p>
                 </div>
-
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-hand-holding-heart"></i> <span class="lang-bn">গোষ্ঠের মেলা</span><span class="lang-en">Goshther Mela</span></h3>
-                        <p class="lang-bn">প্রতি বছর বৈশাখ মাসের পূর্ণিমা তিথিতে সনাতন ধর্মাবলম্বীদের উদ্যোগে ঐতিহ্যবাহী 'গোষ্ঠের মেলা' অনুষ্ঠিত হয়। প্রায় ৩৭৫ বছরের পুরোনো এই মেলায় হিন্দু-মুসলিম নির্বিশেষে সব ধর্মের মানুষের মিলনমেলা ঘটে।</p>
-                        <p class="lang-en">Every year on the full moon of Baishakh, the traditional 'Goshther Mela' is held. In this almost 375-year-old fair, people of all religions come together in harmony.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-basket-shopping"></i> <span class="lang-bn">শীতল পাটি ও কুটির শিল্প</span><span class="lang-en">Cottage Industry</span></h3>
-                        <p class="lang-bn">এই গ্রামটি ঐতিহ্যবাহী শীতল পাটি তৈরির জন্য সমাদৃত। এখানকার শিল্পীদের নিখুঁত হাতের বুননে তৈরি শীতল পাটি এবং বাঁশ-বেতের কাজ গ্রামের নারীদের অর্থনৈতিকভাবে স্বাবলম্বী করেছে।</p>
-                        <p class="lang-en">This village is highly appreciated for making traditional Shital Pati (Cool Mats). The perfectly woven mats and bamboo crafts have made the village women economically self-reliant.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-shirt"></i> <span class="lang-bn">বিখ্যাত তাঁত শিল্প</span><span class="lang-en">Handloom Industry</span></h3>
-                        <p class="lang-bn">সিরাজগঞ্জের তাঁত শিল্পের প্রাণকেন্দ্র হিসেবে এই গ্রামের ঘরে ঘরে হস্তচালিত ও বিদ্যুৎ চালিত তাঁত মেশিনে শাড়ি, লুঙ্গি, গামছা ও তোয়ালে তৈরি হয়, যা দেশের অর্থনীতিতে বড় ভূমিকা রাখে।</p>
-                        <p class="lang-en">As a hub of Sirajganj's handloom industry, sarees, lungis, and towels are produced in hand-operated and power-driven looms in almost every house of this village.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-wheat-awn"></i> <span class="lang-bn">কৃষি ও অর্থনীতি</span><span class="lang-en">Agriculture & Economy</span></h3>
-                        <p class="lang-bn">অধিকাংশ মানুষের প্রধান পেশা কৃষি। উর্বর মাটিতে ধান, পাট, সরিষা এবং নানা জাতের রবিশস্যের আবাদ হয়। আধুনিক কৃষির ছোঁয়ায় কৃষকরা সারা বছরই সবজি ও ফসলের আবাদ করেন।</p>
-                        <p class="lang-en">Agriculture is the main occupation. Paddy, jute, mustard, and various winter crops are cultivated. With modern farming, farmers grow vegetables all year round.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-drum"></i> <span class="lang-bn">উৎসব ও পার্বণ</span><span class="lang-en">Festivals</span></h3>
-                        <p class="lang-bn">শীতকালে পিঠা-পুলি উৎসব, অগ্রহায়ণে নবান্ন, এবং বিভিন্ন গ্রামীণ পালাগানের আয়োজন গ্রামের মানুষকে এক সুতোয় বেঁধে রাখে। বিয়ে বা সামাজিক অনুষ্ঠানে থাকে গ্রামীণ সংস্কৃতির ছোঁয়া।</p>
-                        <p class="lang-en">Winter Pitha festivals, Agrahayan Navanna, and folk songs keep the village united. Weddings and social events always carry a deep touch of rural culture.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-volleyball"></i> <span class="lang-bn">গ্রামীণ খেলাধুলা</span><span class="lang-en">Rural Sports</span></h3>
-                        <p class="lang-bn">বিকেলে গ্রামের খোলা মাঠে বা স্কুলের মাঠে তরুণদের ক্রিকেট, ফুটবল এবং হা-ডু-ডু খেলার দৃশ্য নিয়মিত চোখে পড়ে। বার্ষিক ক্রীড়া প্রতিযোগিতা গ্রামের এক অন্যতম আকর্ষণ।</p>
-                        <p class="lang-en">In the afternoon, scenes of youth playing cricket, football, and Ha-Du-Du are common in the open fields. The annual sports competition is a major attraction.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-people-arrows"></i> <span class="lang-bn">সামাজিক সম্প্রীতি</span><span class="lang-en">Social Harmony</span></h3>
-                        <p class="lang-bn">হিন্দু-মুসলিম সম্প্রীতির এক চমৎকার নিদর্শন এই গ্রাম। যুগ যুগ ধরে উভয় সম্প্রদায়ের মানুষ একে অপরের সুখে-দুঃখে পাশে দাঁড়ায় এবং সব উৎসবে স্বতঃস্ফূর্তভাবে অংশগ্রহণ করে।</p>
-                        <p class="lang-en">This village is a great example of Hindu-Muslim harmony. For ages, people of both communities stand by each other and spontaneously participate in all festivals.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-store"></i> <span class="lang-bn">হাট-বাজার ও আড্ডা</span><span class="lang-en">Local Markets</span></h3>
-                        <p class="lang-bn">গ্রামের সাপ্তাহিক হাটগুলো কেবল বেচাকেনার জায়গা নয়, বরং মানুষের সামাজিক যোগাযোগের প্রধান কেন্দ্র। চায়ের দোকানে বসে গ্রামের নানা বিষয় নিয়ে আড্ডা দেওয়া এখানকার মানুষের প্রতিদিনের অভ্যাস।</p>
-                        <p class="lang-en">Weekly village markets are not just for trading but are the main centers of social communication. Chatting in tea stalls is a daily habit of the people here.</p>
-                    </div>
-                    <!-- New Card: Jhawoil Flyover -->
-                    <div class="info-card">
-                        <h3><i class="fa-solid fa-bridge"></i> <span class="lang-bn">ঝাঐল ওভারব্রিজ</span><span class="lang-en">Jhawoil Flyover</span></h3>
-                        <p class="lang-bn">গ্রামের উত্তর পাশে ঢাকা-রাজশাহী মহাসড়ক সংলগ্ন সুপরিচিত ঝাঐল ওভারব্রিজ অবস্থিত। এটি এ অঞ্চলের যাতায়াত ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা রাখার পাশাপাশি চমৎকার একটি দর্শনীয় স্থান।</p>
-                        <p class="lang-en">The well-known Jhawoil Flyover is located on the northern side, adjacent to the Dhaka-Rajshahi highway. It plays a vital role in regional transport and is a popular local landmark.</p>
-                    </div>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-drum"></i> <span class="lang-bn">উৎসব ও পার্বণ</span><span class="lang-en">Festivals</span></h3>
+                    <p class="lang-bn">শীতকালে পিঠা-পুলি উৎসব, অগ্রহায়ণে নবান্ন, এবং বিভিন্ন গ্রামীণ পালাগানের আয়োজন গ্রামের মানুষকে এক সুতোয় বেঁধে রাখে।</p>
+                    <p class="lang-en">Winter Pitha festivals, Agrahayan Navanna, and folk songs keep the village united.</p>
                 </div>
-            </section>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-volleyball"></i> <span class="lang-bn">গ্রামীণ খেলাধুলা</span><span class="lang-en">Rural Sports</span></h3>
+                    <p class="lang-bn">বিকেলে খোলা মাঠে তরুণদের ক্রিকেট, ফুটবল এবং হা-ডু-ডু খেলার দৃশ্য নিয়মিত চোখে পড়ে। বার্ষিক ক্রীড়া প্রতিযোগিতা অন্যতম আকর্ষণ।</p>
+                    <p class="lang-en">Scenes of youth playing cricket, football, and Ha-Du-Du are common in the open fields.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-people-arrows"></i> <span class="lang-bn">সামাজিক সম্প্রীতি</span><span class="lang-en">Social Harmony</span></h3>
+                    <p class="lang-bn">হিন্দু-মুসলিম সম্প্রীতির এক চমৎকার নিদর্শন এই গ্রাম। যুগ যুগ ধরে উভয় সম্প্রদায়ের মানুষ একে অপরের সুখে-দুঃখে পাশে দাঁড়ায়।</p>
+                    <p class="lang-en">This village is a great example of Hindu-Muslim harmony where people stand by each other.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-store"></i> <span class="lang-bn">হাট-বাজার ও আড্ডা</span><span class="lang-en">Local Markets</span></h3>
+                    <p class="lang-bn">গ্রামের সাপ্তাহিক হাটগুলো কেবল বেচাকেনার জায়গা নয়, বরং মানুষের সামাজিক যোগাযোগের প্রধান কেন্দ্র ও চায়ের আড্ডার স্থান।</p>
+                    <p class="lang-en">Weekly village markets are not just for trading but are the main centers of social communication.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-bridge"></i> <span class="lang-bn">ঝাঐল ওভারব্রিজ</span><span class="lang-en">Jhawoil Flyover</span></h3>
+                    <p class="lang-bn">গ্রামের উত্তর পাশে ঢাকা-রাজশাহী মহাসড়ক সংলগ্ন সুপরিচিত ঝাঐল ওভারব্রিজ অবস্থিত। এটি এ অঞ্চলের যাতায়াত ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+                    <p class="lang-en">The well-known Jhawoil Flyover is located on the northern side, adjacent to the Dhaka-Rajshahi highway.</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Footer -->
-            <footer>
-                <p class="lang-bn">&copy; ২০২৬ ঝাঐল গ্রাম পরিচিতি। সর্বস্বত্ব সংরক্ষিত।</p>
-                <p class="lang-en">&copy; 2026 Jhawoil Village Info. All Rights Reserved.</p>
-                <p>Designed with Advanced Glassmorphism & Dark UI</p>
-            </footer>
-        </div>
+        <!-- Footer & Hit Counter -->
+        <footer>
+            <p class="lang-bn">&copy; ২০২৬ <span class="highlight-text">ঝাঐল গ্রাম</span> পরিচিতি। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p class="lang-en">&copy; 2026 <span class="highlight-text">Jhawoil Village</span> Info. All Rights Reserved.</p>
+            
+            <!-- Dynamic Hit Counter UI -->
+            <div class="hit-counter">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="lang-bn">মোট দর্শক: </span>
+                <span class="lang-en">Total Hits: </span>
+                <b id="pageViewsCount">Loading...</b>
+            </div>
+        </footer>
     </div>
 
     <!-- Scripts -->
     <script>
-        // --- Language Toggle Logic ---
+        // --- Language Switcher Logic ---
         let currentLang = 'bn'; 
 
         function toggleLanguage() {
@@ -403,51 +362,19 @@
         
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('p.lang-bn, h1.lang-bn').forEach(el => el.style.display = 'block');
+            
+            // --- Dynamic Total Hit Counter Logic ---
+            let views = localStorage.getItem('jhawoil_page_views');
+            
+            if (!views) {
+                views = 15420; 
+            } else {
+                views = parseInt(views) + 1; 
+            }
+            
+            localStorage.setItem('jhawoil_page_views', views);
+            document.getElementById('pageViewsCount').innerText = views.toLocaleString('en-IN');
         });
-
-
-        // --- PDF Generation Logic ---
-        function generatePDF() {
-            const btn = document.getElementById('downloadPdfBtn');
-            const originalText = btn.innerHTML;
-            
-            // Change button state to loading
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Downloading...';
-            btn.style.pointerEvents = 'none';
-
-            // Add class to body to handle specific PDF CSS rules
-            document.body.classList.add('pdf-generating');
-
-            const element = document.getElementById('content-to-download');
-            
-            // Generate filename based on current language
-            const fileName = currentLang === 'bn' ? 'Jhawoil_Village_Info_BN.pdf' : 'Jhawoil_Village_Info_EN.pdf';
-
-            // Options for html2pdf
-            const opt = {
-                margin:       [10, 10, 10, 10], // top, left, bottom, right
-                filename:     fileName,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            // Generate and download
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Restore button and remove PDF class
-                btn.innerHTML = originalText;
-                btn.style.pointerEvents = 'auto';
-                document.body.classList.remove('pdf-generating');
-            }).catch(err => {
-                console.error('Error generating PDF:', err);
-                btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error';
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.pointerEvents = 'auto';
-                }, 2000);
-                document.body.classList.remove('pdf-generating');
-            });
-        }
     </script>
 </body>
 </html>
