@@ -47,7 +47,7 @@
 
         /* Container */
         .container {
-            max-width: 1200px; /* Slightly wider for the larger grid */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -121,7 +121,7 @@
             text-align: justify;
         }
 
-        /* Info Grid - Updated for more cards */
+        /* Info Grid */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -140,7 +140,6 @@
             z-index: 1;
         }
 
-        /* Subtle glow effect on hover */
         .info-card::after {
             content: '';
             position: absolute;
@@ -174,15 +173,14 @@
             gap: 12px;
         }
 
-        /* Dynamic Icon Colors */
-        .info-card:nth-child(1) h3 i { color: #f43f5e; } /* Rose */
-        .info-card:nth-child(2) h3 i { color: var(--accent-green); } /* Green */
-        .info-card:nth-child(3) h3 i { color: #38bdf8; } /* Light Blue */
-        .info-card:nth-child(4) h3 i { color: var(--accent-orange); } /* Orange */
-        .info-card:nth-child(5) h3 i { color: #a78bfa; } /* Purple */
-        .info-card:nth-child(6) h3 i { color: #fbbf24; } /* Amber */
-        .info-card:nth-child(7) h3 i { color: #f472b6; } /* Pink */
-        .info-card:nth-child(8) h3 i { color: #2dd4bf; } /* Teal */
+        .info-card:nth-child(1) h3 i { color: #f43f5e; }
+        .info-card:nth-child(2) h3 i { color: var(--accent-green); }
+        .info-card:nth-child(3) h3 i { color: #38bdf8; }
+        .info-card:nth-child(4) h3 i { color: var(--accent-orange); }
+        .info-card:nth-child(5) h3 i { color: #a78bfa; }
+        .info-card:nth-child(6) h3 i { color: #fbbf24; }
+        .info-card:nth-child(7) h3 i { color: #f472b6; }
+        .info-card:nth-child(8) h3 i { color: #2dd4bf; }
 
         .info-card p {
             color: var(--text-secondary);
@@ -194,7 +192,7 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             margin-top: 20px;
         }
@@ -203,12 +201,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             color: var(--text-primary);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
@@ -218,6 +216,13 @@
             background: rgba(24, 119, 242, 0.2);
             border-color: #1877f2;
             box-shadow: 0 0 20px rgba(24, 119, 242, 0.4);
+        }
+
+        /* New Group Button Style */
+        .social-btn.fb-group:hover {
+            background: rgba(14, 165, 233, 0.2);
+            border-color: #0ea5e9;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
         }
 
         .social-btn.yt:hover {
@@ -241,6 +246,7 @@
             .hero-section h1 { font-size: 2.5rem; }
             .glass-box { padding: 25px; }
             h2.section-title { font-size: 1.6rem; }
+            .social-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -256,6 +262,10 @@
                 <a href="https://www.facebook.com/JhawoilGram/" target="_blank" class="social-btn fb">
                     <i class="fa-brands fa-facebook"></i>
                     ফেসবুক পেজ
+                </a>
+                <a href="https://www.facebook.com/groups/Amader.Jhawoil" target="_blank" class="social-btn fb-group">
+                    <i class="fa-solid fa-users"></i>
+                    ফেসবুক গ্রুপ (আমাদের ঝাঐল)
                 </a>
                 <a href="https://www.youtube.com/@Jhawoil" target="_blank" class="social-btn yt">
                     <i class="fa-brands fa-youtube"></i>
@@ -277,7 +287,7 @@
             <p>ঝাঐল গ্রামের রয়েছে এক সমৃদ্ধ অতীত। এই গ্রামের সবচেয়ে বড় অহংকার হলো, এটি <strong>উপমহাদেশের বিখ্যাত গণিতবিদ যাদব চন্দ্র চক্রবর্তীর জন্মস্থান</strong>। ব্রিটিশ আমলে তাঁর রচিত গণিতের বই সমগ্র ভারত উপমহাদেশের বিদ্যালয়গুলোতে পাঠ্যপুস্তক হিসেবে পড়ানো হতো। তাঁকে "পাটিগণিতের সম্রাট" বলা হয়। তাঁর স্মৃতি এই গ্রামের মানুষকে আজও গর্বিত করে।</p>
         </section>
 
-        <!-- Features Grid (Expanded) -->
+        <!-- Features Grid -->
         <section class="glass-box">
             <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> ঐতিহ্য ও জীবনযাত্রা</h2>
             
@@ -306,22 +316,22 @@
                     <h3><i class="fa-solid fa-wheat-awn"></i> কৃষি ও অর্থনীতি</h3>
                     <p>অধিকাংশ মানুষের প্রধান পেশা কৃষি। উর্বর মাটিতে ধান, পাট, সরিষা এবং নানা জাতের রবিশস্যের আবাদ হয়। আধুনিক কৃষির ছোঁয়ায় কৃষকরা সারা বছরই সবজি ও ফসলের আবাদ করেন।</p>
                 </div>
-                <!-- Card 5 (NEW) -->
+                <!-- Card 5 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-drum"></i> উৎসব ও পার্বণ</h3>
                     <p>শীতকালে পিঠা-পুলি উৎসব, অগ্রহায়ণে নবান্ন, এবং বিভিন্ন গ্রামীণ পালাগানের আয়োজন গ্রামের মানুষকে এক সুতোয় বেঁধে রাখে। বিয়ে বা সামাজিক অনুষ্ঠানে থাকে গ্রামীণ সংস্কৃতির ছোঁয়া।</p>
                 </div>
-                <!-- Card 6 (NEW) -->
+                <!-- Card 6 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-volleyball"></i> গ্রামীণ খেলাধুলা</h3>
                     <p>বিকেলে গ্রামের খোলা মাঠে বা স্কুলের মাঠে তরুণদের ক্রিকেট, ফুটবল এবং হা-ডু-ডু খেলার দৃশ্য নিয়মিত চোখে পড়ে। বার্ষিক ক্রীড়া প্রতিযোগিতা গ্রামের এক অন্যতম আকর্ষণ।</p>
                 </div>
-                <!-- Card 7 (NEW) -->
+                <!-- Card 7 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-people-arrows"></i> সামাজিক সম্প্রীতি</h3>
                     <p>হিন্দু-মুসলিম সম্প্রীতির এক চমৎকার নিদর্শন এই গ্রাম। যুগ যুগ ধরে উভয় সম্প্রদায়ের মানুষ একে অপরের সুখে-দুঃখে পাশে দাঁড়ায় এবং সব উৎসবে স্বতঃস্ফূর্তভাবে অংশগ্রহণ করে।</p>
                 </div>
-                <!-- Card 8 (NEW) -->
+                <!-- Card 8 -->
                 <div class="info-card">
                     <h3><i class="fa-solid fa-store"></i> হাট-বাজার ও আড্ডা</h3>
                     <p>গ্রামের সাপ্তাহিক হাটগুলো কেবল বেচাকেনার জায়গা নয়, বরং মানুষের সামাজিক যোগাযোগের প্রধান কেন্দ্র। চায়ের দোকানে বসে গ্রামের নানা বিষয় নিয়ে আড্ডা দেওয়া এখানকার মানুষের প্রতিদিনের অভ্যাস।</p>
@@ -332,6 +342,7 @@
         <!-- Footer -->
         <footer>
             <p>&copy; ২০২৬ ঝাঐল গ্রাম পরিচিতি। সর্বস্বত্ব সংরক্ষিত।</p>
+
         </footer>
     </div>
 
