@@ -40,23 +40,51 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        /* ================= NEW ANIMATED BACKGROUND ================= */
+        /* ================= NEW BACKGROUND: ANIMATED AURORA GLOW ================= */
         body {
             font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #022c22, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background-color: #09090b; /* Deep Midnight Color */
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
+            position: relative;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Floating Glowing Orbs */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.5;
+            animation: floatOrb 20s infinite alternate ease-in-out;
         }
-        /* =========================================================== */
+
+        /* Top Left Blue Orb */
+        body::before {
+            background: radial-gradient(circle, rgba(59,130,246,0.6) 0%, rgba(0,0,0,0) 70%);
+            top: -150px;
+            left: -150px;
+        }
+
+        /* Bottom Right Purple Orb */
+        body::after {
+            background: radial-gradient(circle, rgba(139,92,246,0.6) 0%, rgba(0,0,0,0) 70%);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: -10s; /* Makes it move differently than the first orb */
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, 80px) scale(1.1); }
+            66% { transform: translate(-30px, 40px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        /* ======================================================================== */
 
         /* Floating Action Buttons */
         .fab-container { position: fixed; top: 20px; right: 20px; z-index: 1000; }
@@ -113,7 +141,7 @@
         }
         .cover-wrapper::after {
             content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-            background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.9));
+            background: linear-gradient(to bottom, transparent, rgba(9, 9, 11, 0.9));
         }
         .cover-image { width: 100%; height: 100%; object-fit: cover; }
         .logo-wrapper { margin-top: -85px; position: relative; z-index: 10; display: flex; justify-content: center; }
@@ -298,7 +326,7 @@
                 <p class="lang-bn"><span class="highlight-text">ঝাঐল</span> নামের উৎপত্তি নিয়ে স্থানীয়ভাবে বিভিন্ন জনশ্রুতি প্রচলিত রয়েছে। ধারণা করা হয়, বহু বছর আগে এই অঞ্চলটি ঝাউ জাতীয় গাছ, খাল-বিল ও জলাভূমিতে পরিপূর্ণ ছিল। <strong>"ঝাউ"</strong> শব্দ থেকে ধীরে ধীরে <strong>"ঝাঐল"</strong> নামের উৎপত্তি হয়েছে বলে অনেকে মনে করেন।</p>
                 <p class="lang-en">There are local myths regarding the origin of the name <span class="highlight-text">Jhawoil</span>. It is believed that many years ago, this region was full of Jhau trees and wetlands. Many believe the name <strong>"Jhawoil"</strong> gradually originated from the word <strong>"Jhau"</strong>.</p>
                 
-                <p class="lang-bn">আবার কেউ কেউ বলেন, স্থানীয় আঞ্চলিক ভাষা ও সময়ের পরিবর্তনের মাধ্যমে এই নাম বর্তমান রূপ লাভ করে। যদিও লিখিত ইতিহাস খুব বেশি পাওয়া যায় না, তবুও লোকমুখে প্রচলিত কাহিনিগুলো আজও গ্রামের ঐতিহ্যের অংশ।</p>
+                <p class="lang-bn">আবার কেউ কেউ বলেন, স্থানীয় আঞ্চলিক ভাষা ও সময়ের পরিবর্তনের মাধ্যমে এই নাম বর্তমান রূপ লাভ করে। যদিও লিখিত ইতিহাস খুব বেশি পাওয়া যায়চ্ না, তবুও লোকমুখে প্রচলিত কাহিনিগুলো আজও গ্রামের ঐতিহ্যের অংশ।</p>
                 <p class="lang-en">Others say the name took its current form through changes in local dialect over time. Although written history is scarce, these oral stories remain a part of the village's tradition.</p>
             </div>
         </section>
@@ -498,11 +526,12 @@
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Optional: animate only once
+                    observer.unobserve(entry.target);
                 });
             }, revealOptions);
 
             reveals.forEach(reveal => revealOnScroll.observe(reveal));
+            
             // Trigger first items immediately
             setTimeout(() => {
                 document.querySelectorAll('.hero-section').forEach(el => el.classList.add('active'));
@@ -510,7 +539,7 @@
 
             // --- Dynamic Total Hit Counter Logic ---
             let views = localStorage.getItem('jhawoil_page_views');
-            if (!views) { views = 15420; } else { views = parseInt(views) + 1; }
+            if (!views) { views = 1; } else { views = parseInt(views) + 1; }
             localStorage.setItem('jhawoil_page_views', views);
             document.getElementById('pageViewsCount').innerText = views.toLocaleString('en-IN');
         });
